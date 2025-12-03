@@ -40,9 +40,17 @@ Exemple:
 '''
 
 def fibonacci(fibonacci_number):
-    # Write here your code
-    pass
+    
+    if type(fibonacci_number) != int:
+        raise TypeError("El valor debe ser un número entero")
+    if fibonacci_number < 0:
+        raise ValueError("El valor debe ser entero positivo")
+    if fibonacci_number == 0:
+        return 0
+    if fibonacci_number == 1:
+        return 1
+    return fibonacci(fibonacci_number - 1) + fibonacci(fibonacci_number - 2)
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(fibonacci(10))
+print(fibonacci(10))

@@ -19,32 +19,20 @@ Ejemplo:
     Salida:
     30
 
-Enunciat:
-Crea una funció 'sum_odd_numbers(list_numbers)' que rebi com
-paràmetre una llista de nombres positius enters anomenada 'list_numbers'
-i torneu la suma dels números imparells trobats a la llista.
-Considereu que 'list_numbers' ha de contenir valors numèrics enters majors
-o iguals a '0', en cas contrari cal mostrar un error tipus 'ValueError'.
-
-L'error el pots mostrar amb la següent instrucció:
-raise ValueError("MISSATGE D'ERROR")
-
-Paràmetres:
-- list_numbers: Llista de nombres enters positius.
-
-Exemple:
-     Entrada:
-     sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100])
-
-     Sortida:
-     30
-
 '''
 
 def sum_odd_numbers(list_numbers):
-    # Write here your code
-    pass
+    odd_sum = 0
+    for numbers in list_numbers:
+        if numbers < 0:
+            raise ValueError("Los valores deben ser mayores o iguales a 0")
+        elif type(numbers) != int:
+            raise TypeError("Los valores deben ser números enteros")
+        elif numbers % 2 != 0:
+            odd_sum += numbers
+    return odd_sum 
+ 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
+print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
